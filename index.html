@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT 1</title>
+    <link rel="icon" href="setec-logo.png">
+    <style>
+        html {
+            scroll-behavior: smooth;
+            
+        }
+        hr {
+            animation: fadeUp linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+        body {
+            background-color: #e5e9ee;
+            font-family: Khmer OS Siemreap;
+            font-size: 25px;
+            height: auto;
+            
+        }
+        .menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a3a5c;
+            color: white;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 3px double white;
+            list-style: none;
+            letter-spacing: 1px;
+            gap: 120px;
+            padding: 9px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgb(26, 58, 92,0.4);
+        }
+        .menu1:hover{
+            transition: .25s ease;
+            background-color: #1f5793;
+            border-radius: 10px;
+            transform: scale(1.25);
+            font-weight: bold;
+        }
+        .menu:has(.menu1:hover) .menu1 {
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 16px;
+            transition: color 0.25s, font-size 0.25s;
+        }
+        .menu:has(.menu1:hover) .menu1:hover {
+            color: white;   
+            font-size: 20px;
+            background-color: #1f5793;
+            font-weight: bold;
+        }
+        a{
+            margin-left: 25px;  
+            margin-right: 25px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .info { 
+            animation: fadeUp linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+            background-color: #1a3a5c;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            height: 550px;
+            border: 3.5px solid #ffffff;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-top: 70px;
+            box-shadow: 0 5px 15px rgb(26, 58, 92,0.4);
+            font-family: Khmer OS Siemreap;
+
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.1);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .me {
+            background-color: #e5e9ee;
+            padding: 16px;
+            width: 450px;
+            height: 450px;
+            border: 3px dotted #ff6955;
+            border-radius: 16px;
+            margin-left: 22px;
+            
+            display: flex;
+            flex-direction: column; 
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .me p {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: justify;
+            margin: 0;
+            font-family: Khmer OS Siemreap;
+
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        .rightside {
+            display: flex;
+            flex-direction: column; 
+            flex: 1;               
+            gap: 10px;
+            align-self: flex-start; 
+            min-width: 0;
+            gap: 10px;
+            padding: 26px;
+        }
+        .name {
+            background-color: #e5e9ee;
+            color: #000000;
+            border: 3px dotted #ff6955;
+            font-family: Khmer OS Siemreap;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 8px;
+            height: 60px;
+            width: 100%;
+            box-sizing: border-box;
+
+            align-self: flex-start;
+            margin-top: -7px;
+            margin-left: 7px;
+            
+        }
+        .noch {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 40px;
+            letter-spacing: 1px;
+            margin-top: -2.85px;
+        }
+        .description {
+            background-color: #e5e9ee;
+            color: #000000;
+            border: 3px dotted #ff6955;
+            font-family: Khmer OS Siemreap;
+            padding: 5px;
+            border-radius: 8px;
+            height: 395px;
+            width: 100%;
+            box-sizing: border-box;
+            word-break: break-all;
+            line-height: 30px;
+
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+
+            margin-top: 21px;
+            margin-left: 7px;
+        }
+        .description div {
+            margin-left: 10px;
+            margin-right: 10px;
+           margin-top: 22px;
+        }
+        .wholecontainer {
+            animation: fadeUp linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+            background-color: #1a3a5c;
+            background-color:  rgba(26, 58, 92);
+            overflow: hidden;
+            width: 100%;
+            margin-top: 40px;
+            border-radius: 10px;
+            border: 5px solid white;
+            box-shadow: 5px 5px 15px rgb(26, 58, 92,0.7);
+            margin-left: -5px;
+        }
+
+        .container {
+            display: flex;
+            gap: 250px;
+            height: 450px;
+            animation: slide 15s linear infinite;
+            width: max-content;
+        }
+
+        .container img {
+            width: 450px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }   
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc((-250px * 4) - (250px * 4))); }
+        }
+        .footer {
+            animation: fadeUp linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 10%;
+            background-color: #1a3a5c;
+            position: relative;
+            background-image: url(restaurant.JPEG);
+            box-sizing: border-box; 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            color: white;
+            font-family: Agency FB;
+            width: 100%;
+            height: 250px;
+        }
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); 
+        }
+        .footertext {
+            position: relative;
+            z-index: 1;
+            margin-left: 22px;
+            margin-right: 22px;
+            height: 100%;
+            font-size: 30px;
+            color: white;
+            padding: 0.3px;
+            line-height: 14px;
+        }
+    </style>
+</head>
+
+
+
+
+
+<body>
+    <h1 align="center" style="margin-bottom: -10px;"> <b style="font-family: strawberry; color: black;" id="home"> ភោជនីយដ្ឋាន នុជ </b>  </h1> 
+    
+    <br>
+    
+    <div class="menu">
+        <div class="menu1"> <li> <a href="#home"> ទំព័រដើម </a> </li> </div>
+        <div class="menu1"> <li> <a href="http://192.168.1.5:5500/Project%201.html/food.html"> អាហារ </a> </li> </div>
+        <div class="menu1"> <li> <a href="http://192.168.1.5:5500/Project%201.html/drink.html"> ភេសជ្ជៈ </a> </li> </div> 
+        <div class="menu1"> <li> <a href="http://192.168.1.5:5500/Project%201.html/icecream.html"> ការ៉េម </a> </li> </div>
+        <div class="menu1"> <li> <a href="http://192.168.1.5:5500/Project%201.html/contact.html"> ទំនាក់ទំនង </a> </li> </div>
+    </div>
+    <hr style="background: linear-gradient(90deg, rgb(255, 179, 179), rgb(255, 123, 0))" size="3.5px">
+    
+    <br><br><br>
+
+    <h1 align="center" style="margin-top: 10px; -webkit-text-stroke: #1a3a5c .75px;"> ពីខ្ញុំ </h1>
+   <div class="info" style="margin-top: -15px;">
+        <div class="me">
+            <img src="Dinonoch.png" width="850px" height="750px" style="margin-top: -156px;">
+        </div>
+
+        <div class="rightside">
+            <div class="name">
+                <span class="noch" style="margin-top: -10px;"> សារិន​ ភីផានុជ </span> 
+            </div>
+            <div class="description">
+                <span align="justify" style="margin-left: 35px; font-size: 19.5px; letter-spacing: -1px;"> សូមស្វាគមន៍មកកាន់ 
+                    <span align="justify" style="line-height: -1.5px; letter-spacing: -1px;"> ហាង Noch’s Shop ដែលជាកន្លែងចូលចិត្តរបស់អ្នកសម្រាប់អាហារឆ្ងាញ់ ភេសជ្ជៈត្រជាក់ៗ និងការ៉េមផ្អែមឆ្ងាញ់! យើងជាភោជនីយដ្ឋានតូចមួយដ៏កក់ក្តៅ ដែលប្តេជ្ញាផ្តល់ជូនអ្នកនូវរសជាតិដ៏អស្ចារ្យក្នុងគ្រប់ពេលញ៉ាំ និងគ្រប់ពេលផឹក។ មឺនុយរបស់យើងពោរពេញទៅដោយអាហារឆ្ងាញ់ជាច្រើនមុខ ដែលធ្វើឡើងពីគ្រឿងផ្សំស្រស់ៗ ភេសជ្ជៈស្រស់ត្រជាក់សម្រាប់បំបាត់ការស្រេកទឹក និងការ៉េមរសជាតិឈ្ងុយឆ្ងាញ់ជាច្រើនប្រភេទ ដែលនឹងធ្វើឱ្យអ្នកពេញចិត្តជាមួយរសជាតិផ្អែមល្ហែម។
+
+                    មិនថាអ្នកមកសម្រាប់អាហារសម្រន់ អាហារពេញមួយពេល ឬគ្រាន់តែចង់ផ្តល់រង្វាន់តូចមួយឱ្យខ្លួនឯងជាមួយអ្វីផ្អែមៗទេ ហាង Noch’s Shop គឺជាកន្លែងដ៏ល្អឥតខ្ចោះសម្រាប់អ្នក។ យើងជឿជាក់ថា អាហារល្អអាចនាំមនុស្សមកជួបជុំគ្នា ហើយយើងដាក់បេះដូង និងក្តីស្រឡាញ់ចូលទៅក្នុងគ្រប់មុខម្ហូបដែលយើងបម្រើ។
+
+                    សូមអញ្ជើញចូលមក អង្គុយសម្រាក និងអនុញ្ញាតឱ្យពួកយើងមើលថែអ្នក។ យើងធានាថា គ្រប់ពេលដែលអ្នកបានញ៉ាំ នឹងពោរពេញដោយក្តីស្រឡាញ់ ភាពអស្ចារ្យ និងការយកចិត្តទុកដាក់របស់ពួកយើង។ យើងចាត់ទុកអតិថិជនទាំងអស់ដូចជាគ្រួសារ ហើយយើងដឹងថា អាហារល្អអាចជួយបំបាត់ស្ត្រេស ការគិតច្រើន និងភាពសោកសៅបាន។ យើងជឿជាក់លើគ្រប់មុខម្ហូបដែលយើងរៀបចំដោយវិជ្ជាជីវៈ ដើម្បីភ្ជាប់អារម្មណ៍ជ្រាលជ្រៅជាមួយព្រលឹងរបស់អ្នក និងធ្វើឱ្យអ្នកចងចាំគ្រប់រសជាតិបានយូរអង្វែង។
+
+                    យើងសង្ឃឹមថានឹងបានជួបអ្នកឆាប់ៗនេះ និងធ្វើឱ្យគ្រប់ការមកលេងរបស់អ្នកក្លាយជាអនុស្សាវរីយ៍មួយដែលមិនអាចបំភ្លេចបាន សម្រាប់អ្នកនាពេលអនាគត។</span> 
+                </span>
+            </div>
+        </div>
+   </div>
+
+   <br> <br> <br> <br> <br> <br> <br> 
+   <h1 align="center" style="font-size: 30px; animation: fadeUp linear; animation-timeline: view(); animation-range: entry 0% cover 40%;"> ហាងរបស់យើងមានមីនុយច្រើនប្រភេទ ប៉ុន្តែយើងធ្វើអ្វីៗទាំងអស់ដោយ </h1>
+   <h1 align="center" style="margin-top: -26px; font-size: 70px; animation: fadeUp linear; animation-timeline: view(); animation-range: entry 0% cover 40%;"> <b> <u> ក្តីស្រឡាញ់ </u> </b> </h1>
+   <hr>
+
+   <div class="wholecontainer">
+        <div class="container">
+            <a href="http://192.168.1.5:5500/Project%201.html/food.html"> <img src="Cheese pizza.png"> </a>
+            <a href="http://192.168.1.5:5500/Project%201.html/drink.html"> <img src="fruit juice.png"> </a>
+            <a href="http://192.168.1.5:5500/Project%201.html/icecream.html"> <img src="ice cream.png"> </a>
+            <a href="http://192.168.1.5:5500/Project%201.html/contact.html"> <img src="contact us.png"> </a>
+
+            <a href="http://192.168.1.5:5500/Project%201.html/food.html"> <img src="Cheese pizza.png"> </a> 
+            <a href="http://192.168.1.5:5500/Project%201.html/drink.html"> <img src="fruit juice.png"> </a>
+            <a href="http://192.168.1.5:5500/Project%201.html/icecream.html"> <img src="ice cream.png"> </a>
+            <a href="http://192.168.1.5:5500/Project%201.html/contact.html">  <img src="contact us.png"> </a> 
+             
+        </div>
+   </div>
+   <hr style="margin-top: 40px;">
+   
+
+    <div id="qrcode" align="center" style="margin-top: 120px; animation: fadeUp linear; animation-timeline: view(); animation-range: entry 0% cover 40%;"> <p style="font-size: 32px;"> ស្កេនដើម្បីទទួលបានកូដ </p></div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs2@0.0.2/qrcode.min.js"> </script>
+    <script src="javascript.js"></script> 
+    
+
+
+
+   <br><br><br><br><br>
+   <hr>
+   <div class="footer">
+        <div class="footertext">
+            <p style="font-size: 22px; margin-top: 69px;"> 
+                🏠︎ <span style="margin-left: 13px;">: #32k street, house no. 32, Khan Toul Kok, Phnom Penh </span> 
+                <span style="margin-left: 900px;"> ⓕ <span style="margin-left: 18px;"> :  noch12345 </span>  </span>
+            </p>
+            <p style="font-size: 22px;"> 
+                🕿 <span style="margin-left: 10px;"> : 012 345 678 </span>
+                <span style="margin-left: 1197px;"> 𝐗 <span style="margin-left: 21px;"> :  noch12345 </span>  </span>
+            </p>
+            <p style="font-size: 22px; margin-left: 2px; margin-top: -9px;"> 
+                ◛ <span style="margin-left: 13px;"> : noch12345@gmail.com </span>
+                <span style="margin-left: 1123px;"> 
+                    <svg width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="10" height="10" rx="22" fill="black"/>
+                    <rect x="5" y="5" width="86" height="86" rx="17" fill="white"/>
+                    <circle cx="50" cy="50" r="20" fill="none" stroke="black" stroke-width="6"/>
+                    <circle cx="74" cy="26" r="5" fill="black"/>
+                    </svg> <span style="margin-left: 18.3px;"> : noch12345 </span> </span>
+            </p>
+            <p style="font-size: 22px; margin-left: 2px; margin-top: -9px;"> 
+                ◛ <span style="margin-left: 13px;"> : nochrestaurant@gmail.com </span> 
+                <span style="margin-left: 1087px; color: white;" > 
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 256 256" xml:space="preserve">
+                    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+	                <path d="M 84.494 22.535 c -5.144 0 -9.891 -1.704 -13.702 -4.579 c -4.371 -3.296 -7.512 -8.13 -8.621 -13.702 C 61.895 2.877 61.748 1.456 61.733 0 H 47.038 v 40.154 l -0.018 21.994 c 0 5.88 -3.829 10.866 -9.137 12.619 c -1.54 0.509 -3.204 0.75 -4.937 0.655 c -2.211 -0.121 -4.283 -0.789 -6.084 -1.866 c -3.833 -2.292 -6.431 -6.451 -6.502 -11.208 c -0.111 -7.435 5.9 -13.496 13.329 -13.496 c 1.467 0 2.875 0.239 4.194 0.674 V 38.552 v -3.945 c -1.391 -0.206 -2.806 -0.313 -4.238 -0.313 c -8.132 0 -15.737 3.38 -21.174 9.47 c -4.109 4.602 -6.574 10.473 -6.954 16.63 c -0.498 8.088 2.461 15.776 8.201 21.449 c 0.843 0.833 1.729 1.606 2.655 2.319 C 21.294 87.947 27.31 90 33.646 90 c 1.431 0 2.847 -0.106 4.238 -0.312 c 5.919 -0.877 11.38 -3.586 15.69 -7.847 c 5.296 -5.234 8.222 -12.183 8.253 -19.579 l -0.076 -32.844 c 2.526 1.949 5.289 3.562 8.253 4.813 c 4.611 1.945 9.5 2.931 14.531 2.93 V 26.491 v -3.959 C 84.539 22.535 84.497 22.535 84.494 22.535 L 84.494 22.535 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                    </g>    
+                    </svg> <span style="margin-left: 18.3px;"> : noch12345 </span> </span>
+            </p>
+        </div>
+   </div>
+
+
+</body> 
+</html>
