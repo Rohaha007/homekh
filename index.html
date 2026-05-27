@@ -248,6 +248,15 @@
             padding: 0.3px;
             line-height: 14px;
         }
+		.footertext p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding: 4px 0;
+            line-height: 40px;
+            margin-top: -10px;
+        }
 		.translate {
             background-color: #1a3a5c; 
             width: 75px; 
@@ -351,36 +360,64 @@
    <br><br><br><br><br>
    <hr>
    <div class="footer">
-        <div class="footertext">
-            <p style="font-size: 22px; margin-top: 69px;"> 
-                🏠︎ <span style="margin-left: 13px;">: #32k street, house no. 32, Khan Toul Kok, Phnom Penh </span> 
-                <span style="margin-left: 900px;"> ⓕ <span style="margin-left: 18px;"> :  noch12345 </span>  </span>
-            </p>
-            <p style="font-size: 22px;"> 
-                🕿 <span style="margin-left: 10px;"> : 012 345 678 </span>
-                <span style="margin-left: 1197px;"> 𝐗 <span style="margin-left: 21px;"> :  noch12345 </span>  </span>
-            </p>
-            <p style="font-size: 22px; margin-left: 2px; margin-top: -9px;"> 
-                ◛ <span style="margin-left: 13px;"> : noch12345@gmail.com </span>
-                <span style="margin-left: 1123px;"> 
-                    <svg width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="2" width="10" height="10" rx="22" fill="black"/>
-                    <rect x="5" y="5" width="86" height="86" rx="17" fill="white"/>
-                    <circle cx="50" cy="50" r="20" fill="none" stroke="black" stroke-width="6"/>
-                    <circle cx="74" cy="26" r="5" fill="black"/>
-                    </svg> <span style="margin-left: 18.3px;"> : noch12345 </span> </span>
-            </p>
-            <p style="font-size: 22px; margin-left: 2px; margin-top: -9px;"> 
-                ◛ <span style="margin-left: 13px;"> : nochrestaurant@gmail.com </span> 
-                <span style="margin-left: 1087px; color: white;" > 
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="0 0 256 256" xml:space="preserve">
-                    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-	                <path d="M 84.494 22.535 c -5.144 0 -9.891 -1.704 -13.702 -4.579 c -4.371 -3.296 -7.512 -8.13 -8.621 -13.702 C 61.895 2.877 61.748 1.456 61.733 0 H 47.038 v 40.154 l -0.018 21.994 c 0 5.88 -3.829 10.866 -9.137 12.619 c -1.54 0.509 -3.204 0.75 -4.937 0.655 c -2.211 -0.121 -4.283 -0.789 -6.084 -1.866 c -3.833 -2.292 -6.431 -6.451 -6.502 -11.208 c -0.111 -7.435 5.9 -13.496 13.329 -13.496 c 1.467 0 2.875 0.239 4.194 0.674 V 38.552 v -3.945 c -1.391 -0.206 -2.806 -0.313 -4.238 -0.313 c -8.132 0 -15.737 3.38 -21.174 9.47 c -4.109 4.602 -6.574 10.473 -6.954 16.63 c -0.498 8.088 2.461 15.776 8.201 21.449 c 0.843 0.833 1.729 1.606 2.655 2.319 C 21.294 87.947 27.31 90 33.646 90 c 1.431 0 2.847 -0.106 4.238 -0.312 c 5.919 -0.877 11.38 -3.586 15.69 -7.847 c 5.296 -5.234 8.222 -12.183 8.253 -19.579 l -0.076 -32.844 c 2.526 1.949 5.289 3.562 8.253 4.813 c 4.611 1.945 9.5 2.931 14.531 2.93 V 26.491 v -3.959 C 84.539 22.535 84.497 22.535 84.494 22.535 L 84.494 22.535 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
-                    </g>    
-                    </svg> <span style="margin-left: 18.3px;"> : noch12345 </span> </span>
+    <div class="footertext">
+        <p style="font-size: 22px; margin-top: 40px;">
+            <span>🏠︎ : #32k street, house no. 32, Khan Toul Kok, Phnom Penh</span>
+            <span style="margin-left: -167px; letter-spacing: 1.25px; font-weight: bold;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                </svg> <span> Student's name:  </span> Sarin Phyphanoch
+            </span>
+            <span>ⓕ : noch12345</span>
+        </p>
+        <p style="font-size: 22px;">
+            <span>🕿 : 012 345 678</span>
+            <span style="margin-left: 30px; letter-spacing: 1.25px; font-weight: bold;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                </svg> <span>Teacher's name:  </span> Ry Visan
+            </span>
+            <span> 𝐗 : noch12345</span>
+        </p>
+        <p style="font-size: 22px;">
+            <span>◛ : noch12345@gmail.com</span>
+                <span style="margin-left: 19px; letter-spacing: 1.25px; font-weight: bold;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 21 19" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 22 8 12 14 2 8"/>
+                    <path d="M6 11v5c0 2 2.5 4 6 4s6-2 6-4v-5"/>
+                    </svg> <span>Group:  </span> SX7
+                </span>
+            <span style="display:flex; align-items:center; gap:6px; ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+                </svg>: noch12345
+            </span>
+        </p>
+        <p style="font-size: 22px;">
+            <span>◛ : nochrestaurant@gmail.com</span>
+                <span style="margin-left: 76px; letter-spacing: 1.25px; font-weight: bold;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="8" y1="13" x2="16" y2="13"/>
+                    <line x1="8" y1="17" x2="16" y2="17"/>
+                    <line x1="8" y1="9" x2="10" y2="9"/>
+                    </svg> <span>Project:   </span> Midterm Project
+                </span>
+                <span style="display:flex; align-items:center; gap:6px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+                        <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                            <path d="M 84.494 22.535 c -5.144 0 -9.891 -1.704 -13.702 -4.579 c -4.371 -3.296 -7.512 -8.13 -8.621 -13.702 C 61.895 2.877 61.748 1.456 61.733 0 H 47.038 v 40.154 l -0.018 21.994 c 0 5.88 -3.829 10.866 -9.137 12.619 c -1.54 0.509 -3.204 0.75 -4.937 0.655 c -2.211 -0.121 -4.283 -0.789 -6.084 -1.866 c -3.833 -2.292 -6.431 -6.451 -6.502 -11.208 c -0.111 -7.435 5.9 -13.496 13.329 -13.496 c 1.467 0 2.875 0.239 4.194 0.674 V 38.552 v -3.945 c -1.391 -0.206 -2.806 -0.313 -4.238 -0.313 c -8.132 0 -15.737 3.38 -21.174 9.47 c -4.109 4.602 -6.574 10.473 -6.954 16.63 c -0.498 8.088 2.461 15.776 8.201 21.449 c 0.843 0.833 1.729 1.606 2.655 2.319 C 21.294 87.947 27.31 90 33.646 90 c 1.431 0 2.847 -0.106 4.238 -0.312 c 5.919 -0.877 11.38 -3.586 15.69 -7.847 c 5.296 -5.234 8.222 -12.183 8.253 -19.579 l -0.076 -32.844 c 2.526 1.949 5.289 3.562 8.253 4.813 c 4.611 1.945 9.5 2.931 14.531 2.93 V 26.491 v -3.959 C 84.539 22.535 84.497 22.535 84.494 22.535 z" fill="white"/>
+                        </g>
+                    </svg> : noch12345
+                </span>
             </p>
         </div>
-   </div>
+    </div>
 
 
 </body> 
