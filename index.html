@@ -3,17 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROJECT 1</title>
+    <title> ទំព័រដើម </title>
     <link rel="icon" href="setec-logo.png">
     <style>
         html {
             scroll-behavior: smooth;
             
         }
-        hr {
+        .hranimation {
             animation: fadeUp linear;
             animation-timeline: view();
             animation-range: entry 0% cover 40%;
+        }
+        .translate {
+            display: flex;
+            gap: 15px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+        .translate a {
+            margin: 0;
+            text-decoration: none;
+            font-family: Agency FB;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        .eng {
+            background: rgba(26,58,92,0.3);
+            color: rgba(255,255,255,0.6);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 5px 14px;
+            min-width: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .eng:hover {
+            border: 1px solid #5b9bd5;
+            box-shadow: 0 0 8px #5b9bd5,
+                        0 0 5px #5b9bd5,
+                        0 0 5px #5b9bd5; 
+            color: white;
+            transform: scale(1.2);
+        }
+        .kh {
+            background: #1a3a5c;
+            color: white;
+            border: 1px solid #2e6da4;
+            border-radius: 20px;
+            padding: 5px 14px;
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .kh:hover {
+            border: 1px solid #5b9bd5;
+            box-shadow: 0 0 8px #5b9bd5,
+                        0 0 5px #5b9bd5,
+                        0 0 5px #5b9bd5; 
+            transform: scale(1.2);
         }
         body {
             background-color: #e5e9ee;
@@ -43,6 +92,7 @@
         .menu1:hover{
             transition: .25s ease;
             background-color: #1f5793;
+            background: linear-gradient(90deg, #c0392b, #e67e22);
             border-radius: 10px;
             transform: scale(1.25);
             font-weight: bold;
@@ -64,6 +114,16 @@
             text-decoration: none;
             color: inherit;
         }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.1);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
         .info { 
             animation: fadeUp linear;
             animation-timeline: view();
@@ -84,15 +144,18 @@
             align-items: center;
             justify-content: left;
         }
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px) scale(0.1);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+        .dinonoch {
+            width: 250px; 
+            height: 250px;
+            margin-top: 105px;
+            cursor: pointer;
+        }
+        .dinonoch:hover {
+            transition: all .3s ease-in;
+            transform: scale(1.25);
+            width: 850px;
+            height: 750px;
+            margin-top: -156px;
         }
         .me {
             background-color: #e5e9ee;
@@ -191,8 +254,16 @@
             border: 5px solid white;
             box-shadow: 5px 5px 15px rgb(26, 58, 92,0.7);
             margin-left: -5px;
-        }
 
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+        }
+        .container a img {
+            transition: transform 0.3s ease;
+        }
+        .container a:hover img {
+            transform: scale(1.05);
+        }
         .container {
             display: flex;
             gap: 250px;
@@ -200,14 +271,52 @@
             animation: slide 15s linear infinite;
             width: max-content;
         }
-
-        .container img {
+        .wholecontainer:hover .container {
+            animation-play-state: paused; 
+        }
+        .container img {    
             width: 450px;
             height: 450px;
             object-fit: cover;
             border-radius: 8px;
             flex-shrink: 0;
         }   
+        .slideimage {
+            position: relative;
+            flex-shrink: 0;
+        }
+        .blackBG {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;           
+            transition: opacity 0.3s ease;
+        }
+        .slideimage:hover .blackBG {
+            opacity: 1; 
+            transform: scale(1.05);
+        }
+
+        .blackBG span {
+            color: white;
+            font-size: 70px;
+            font-family: Khmer OS Siemreap;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+        .slideimage img {
+            transition: transform 0.3s ease;
+        }
+        .slideimage:hover img {
+            transform: scale(1.05);
+        }
         @keyframes slide {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc((-250px * 4) - (250px * 4))); }
@@ -216,6 +325,7 @@
             animation: fadeUp linear;
             animation-timeline: view();
             animation-range: entry 0% cover 10%;
+
             background-color: #1a3a5c;
             position: relative;
             background-image: url(restaurant.JPEG);
@@ -223,10 +333,12 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
+
             color: white;
             font-family: Agency FB;
             width: 100%;
             height: 250px;
+            border-radius: 20px 20px 0 0px;
         }
         .footer::before {
             content: '';
@@ -235,42 +347,54 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); 
+            background-color: rgba(0, 0, 0, 0.7); 
+            border-radius: 20px 20px 0 0px;
         }
-        .footertext {
-            position: relative;
+        .sectioncolumn {
+            margin-top: -12px;
+        }
+        .footertop {
             z-index: 1;
-            margin-left: 22px;
-            margin-right: 22px;
-            height: 100%;
-            font-size: 30px;
-            color: white;
-            padding: 0.3px;
-            line-height: 14px;
-        }
-		.footertext p {
+            position: relative;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin: 0;
-            padding: 4px 0;
-            line-height: 40px;
-            margin-top: -10px;
+            margin-left: 22px;
+            margin-right: 22px;
         }
-		.translate {
-            background-color: #1a3a5c; 
-            width: 75px; 
-            height: 30px; 
-            color: white;
-            border-radius: 45%;
-            padding: 2px;
-			font-family: Agency FB;
+        .footertopinfo {
+            color: white;    
+            margin-top: 21px;
+            font-weight: bold;
         }
-        .translate:hover {
-            transition: .2s ease;
-            background-color: #1f5793;
+        .footertopinfo1 {
+            background-color: rgb(155, 146, 146, 0.27);
             color: white;
-            transform: scale(1.1);
+            padding: 7.5px;
+            border-radius: 7.5px;
+            border: 1px solid white;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+        .footertext {
+            margin-left: 22px;
+            margin-right: 22px;
+            z-index: 1;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+        .graytext {
+            color:  rgb(135, 134, 134); 
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: .75px;
+        }
+        .whitetext {
+            color: white;
+            font-size: 21px;
+            line-height: 21px;
         }
     </style>
 </head>
@@ -280,34 +404,36 @@
 
 
 <body>
-    <h1 align="center" style="margin-bottom: -10px;"> <b style="font-family: Khmer OS Siemreap; color: black;" id="home"> ភោជនីយដ្ឋាន នុជ </b>  </h1> 
-    <div style="display: flex; margin-left: 5px ; gap: 25px;" class="translate">
-            <div class="translate">
-                <a href="https://rohaha007.github.io/homekh/"> KH</a>
-            </div> 
-        <span>
-            <div  class="translate">
-                <a href="https://rohaha007.github.io/home/" style="margin-left: 21px;"> ENG</a>
-            </div>
-        </span>
+    <h1 align="center" style="margin-bottom: -10px;"> <b style="font-family: Khmer OS Siemreap; color: black;" id="home"> ហាង នុជ </b>  </h1> 
+    
+    <div class="translate">
+        <a href="https://rohaha007.github.io/homekh/">
+            <div class="kh">KH</div>
+        </a>
+        <span style="margin-top: -9px;"> | </span>
+        <a href="https://rohaha007.github.io/home/">
+            <div class="eng">ENG</div>
+        </a>
     </div>
+
+
     <br>
     
     <div class="menu">
-        <div class="menu1"> <li> <a href="https://rohaha007.github.io/homekh/"> ទំព័រដើម </a> </li> </div>
+        <div class="menu1"> <li> <a href="https://rohaha007.github.io/homekh/"> <u> ទំព័រដើម </u> </a> </li> </div>
         <div class="menu1"> <li> <a href="https://rohaha007.github.io/foodkh/"> អាហារ </a> </li> </div>
         <div class="menu1"> <li> <a href="https://rohaha007.github.io/drinkkh/"> ភេសជ្ជៈ </a> </li> </div> 
         <div class="menu1"> <li> <a href="https://rohaha007.github.io/ice-creamkh/"> ការ៉េម </a> </li> </div>
         <div class="menu1"> <li> <a href="https://rohaha007.github.io/contactkh/"> ទំនាក់ទំនង </a> </li> </div>
     </div>
-    <hr style="background: linear-gradient(90deg, rgb(255, 179, 179), rgb(255, 123, 0))" size="3.5px">
+    <hr class="hranimation" style="background: linear-gradient(90deg, rgb(255, 179, 179), rgb(255, 123, 0))" size="3.5px">
     
     <br><br><br>
 
-    <h1 align="center" style="margin-top: 10px; -webkit-text-stroke: #1a3a5c .75px;"> ពីខ្ញុំ </h1>
+    <h1 align="center" style="margin-top: 10px; -webkit-text-stroke: #1a3a5c .75px;"> អំពីខ្ញុំ </h1>
    <div class="info" style="margin-top: -15px;">
         <div class="me">
-            <img src="Dinonoch.png" width="850px" height="750px" style="margin-top: -156px;">
+            <img src="Dinonoch.png" class="dinonoch">
         </div>
 
         <div class="rightside">
@@ -315,11 +441,10 @@
                 <span class="noch" style="margin-top: -10px;"> សារិន​ ភីផានុជ </span> 
             </div>
             <div class="description">
-                <span align="justify" style="margin-left: 35px; font-size: 19.5px; letter-spacing: -1px;"> សូមស្វាគមន៍មកកាន់ 
-                    <span align="justify" style="line-height: -1.5px; letter-spacing: -1px;"> ហាង Noch’s Shop ដែលជាកន្លែងចូលចិត្តរបស់អ្នកសម្រាប់អាហារឆ្ងាញ់ ភេសជ្ជៈត្រជាក់ៗ និងការ៉េមផ្អែមឆ្ងាញ់! យើងជាភោជនីយដ្ឋានតូចមួយដ៏កក់ក្តៅ ដែលប្តេជ្ញាផ្តល់ជូនអ្នកនូវរសជាតិដ៏អស្ចារ្យក្នុងគ្រប់ពេលញ៉ាំ និងគ្រប់ពេលផឹក។ មឺនុយរបស់យើងពោរពេញទៅដោយអាហារឆ្ងាញ់ជាច្រើនមុខ ដែលធ្វើឡើងពីគ្រឿងផ្សំស្រស់ៗ ភេសជ្ជៈស្រស់ត្រជាក់សម្រាប់បំបាត់ការស្រេកទឹក និងការ៉េមរសជាតិឈ្ងុយឆ្ងាញ់ជាច្រើនប្រភេទ ដែលនឹងធ្វើឱ្យអ្នកពេញចិត្តជាមួយរសជាតិផ្អែមល្ហែម។
+                <span align="justify" style="margin-left: 35px; font-size: 21px; letter-spacing: -1px;"> សូមស្វាគមន៍មកកាន់ 
+                    <span align="justify" style="line-height: -22px; letter-spacing: -1px;"> ហាង Noch’s Shop ដែលជាកន្លែងចូលចិត្តរបស់អ្នកសម្រាប់អាហារឆ្ងាញ់ ភេសជ្ជៈត្រជាក់ៗ និងការ៉េមផ្អែមឆ្ងាញ់! យើងជាភោជនីយដ្ឋានតូចមួយដ៏កក់ក្តៅ ដែលប្តេជ្ញាផ្តល់ជូនអ្នកនូវរសជាតិដ៏អស្ចារ្យក្នុងគ្រប់ពេលញ៉ាំ និងគ្រប់ពេលផឹក។ មឺនុយរបស់យើងពោរពេញទៅដោយអាហារឆ្ងាញ់ជាច្រើនមុខ ដែលធ្វើឡើងពីគ្រឿងផ្សំស្រស់ៗ ភេសជ្ជៈស្រស់ត្រជាក់សម្រាប់បំបាត់ការស្រេកទឹក និងការ៉េមរសជាតិឈ្ងុយឆ្ងាញ់ជាច្រើនប្រភេទ ដែលនឹងធ្វើឱ្យអ្នកពេញចិត្តជាមួយរសជាតិផ្អែមល្ហែម។
 
-                    មិនថាអ្នកមកសម្រាប់អាហារសម្រន់ អាហារពេញមួយពេល ឬគ្រាន់តែចង់ផ្តល់រង្វាន់តូចមួយឱ្យខ្លួនឯងជាមួយអ្វីផ្អែមៗទេ ហាង Noch’s Shop គឺជាកន្លែងដ៏ល្អឥតខ្ចោះសម្រាប់អ្នក។ យើងជឿជាក់ថា អាហារល្អអាចនាំមនុស្សមកជួបជុំគ្នា ហើយយើងដាក់បេះដូង និងក្តីស្រឡាញ់ចូលទៅក្នុងគ្រប់មុខម្ហូបដែលយើងបម្រើ។
-
+                    មិនថាអ្នកមកសម្រាប់អាហារសម្រន់ អាហារពេញមួយពេល ឬគ្រាន់តែចង់ផ្តល់រង្វាន់តូចមួយឱ្យខ្លួនឯងជាមួយអ្វីផ្អែមៗទេ ហាង Noch’s Shop គឺជាកន្លែងដ៏ល្អឥតខ្ចោះសម្រាប់អ្នក។ 
                     សូមអញ្ជើញចូលមក អង្គុយសម្រាក និងអនុញ្ញាតឱ្យពួកយើងមើលថែអ្នក។ យើងធានាថា គ្រប់ពេលដែលអ្នកបានញ៉ាំ នឹងពោរពេញដោយក្តីស្រឡាញ់ ភាពអស្ចារ្យ និងការយកចិត្តទុកដាក់របស់ពួកយើង។ យើងចាត់ទុកអតិថិជនទាំងអស់ដូចជាគ្រួសារ ហើយយើងដឹងថា អាហារល្អអាចជួយបំបាត់ស្ត្រេស ការគិតច្រើន និងភាពសោកសៅបាន។ យើងជឿជាក់លើគ្រប់មុខម្ហូបដែលយើងរៀបចំដោយវិជ្ជាជីវៈ ដើម្បីភ្ជាប់អារម្មណ៍ជ្រាលជ្រៅជាមួយព្រលឹងរបស់អ្នក និងធ្វើឱ្យអ្នកចងចាំគ្រប់រសជាតិបានយូរអង្វែង។
 
                     យើងសង្ឃឹមថានឹងបានជួបអ្នកឆាប់ៗនេះ និងធ្វើឱ្យគ្រប់ការមកលេងរបស់អ្នកក្លាយជាអនុស្សាវរីយ៍មួយដែលមិនអាចបំភ្លេចបាន សម្រាប់អ្នកនាពេលអនាគត។</span> 
@@ -331,23 +456,61 @@
    <br> <br> <br> <br> <br> <br> <br> 
    <h1 align="center" style="font-size: 30px; animation: fadeUp linear; animation-timeline: view(); animation-range: entry 0% cover 40%;"> ហាងរបស់យើងមានមីនុយច្រើនប្រភេទ ប៉ុន្តែយើងធ្វើអ្វីៗទាំងអស់ដោយ </h1>
    <h1 align="center" style="margin-top: -26px; font-size: 70px; animation: fadeUp linear; animation-timeline: view(); animation-range: entry 0% cover 40%;"> <b> <u> ក្តីស្រឡាញ់ </u> </b> </h1>
-   <hr>
+   <hr class="hranimation">
 
    <div class="wholecontainer">
         <div class="container">
-            <a href="https://rohaha007.github.io/foodkh/"> <img src="Cheese-pizza.png"> </a>
-            <a href="https://rohaha007.github.io/drinkkh/"> <img src="fruit-juice.png"> </a>
-            <a href="https://rohaha007.github.io/ice-creamkh/"> <img src="ice-cream.png"> </a>
-            <a href="https://rohaha007.github.io/contactkh/"> <img src="contact-us.png"> </a>
-
-            <a href="https://rohaha007.github.io/foodkh/"> <img src="Cheese-pizza.png"> </a> 
-            <a href="https://rohaha007.github.io/drinkkh/"> <img src="fruit-juice.png"> </a>
-            <a href="https://rohaha007.github.io/ice-creamkh/"> <img src="ice-cream.png"> </a>
-            <a href="https://rohaha007.github.io/contactkh/">  <img src="contact-us.png"> </a> 
-             
+            <a href="https://rohaha007.github.io/food/">
+                <div class="slideimage">
+                    <img src="Cheese-pizza.png">
+                    <div class="blackBG"><span>អាហារ</span></div>
+                </div>
+            </a>
+            <a href="https://rohaha007.github.io/drink/">
+                <div class="slideimage">
+                    <img src="fruit-juice.png">
+                    <div class="blackBG"><span>ភេសជ្ជៈ</span></div>
+                </div>
+            </a>
+            <a href="https://rohaha007.github.io/ice-cream/">
+                <div class="slideimage">
+                    <img src="ice-cream.png">
+                    <div class="blackBG"><span>ការ៉េម</span></div>
+                </div>
+            </a>
+            <a href="https://rohaha007.github.io/contact/">
+                <div class="slideimage">
+                    <img src="contact-us.png">
+                    <div class="blackBG"><span>ទំនាក់ទំនង</span></div>
+                </div>
+            </a>
+            <a href="https://rohaha007.github.io/food/">
+                <div class="slideimage">
+                    <img src="Cheese-pizza.png">
+                    <div class="blackBG"><span>អាហារ</span></div>
+                </div>
+            </a>
+            <a href="https://rohaha007.github.io/drink/">
+                <div class="slideimage">
+                    <img src="fruit-juice.png">
+                    <div class="blackBG"><span>ភេសជ្ជៈ</span></div>
+                </div>
+            </a>
+            <a href="https://rohaha007.github.io/ice-cream/">
+                <div class="slideimage">
+                    <img src="ice-cream.png">
+                    <div class="blackBG"><span>ការ៉េម</span></div>
+                </div>
+            </a>
+            <a href="https://rohaha007.github.io/contact/">
+                <div class="slideimage">
+                    <img src="contact-us.png">
+                    <div class="blackBG"><span>ទំនាក់ទំនង</span></div>
+                </div>
+            </a>
         </div>
-   </div>
-   <hr style="margin-top: 40px;">
+    </div>
+   <hr class="hranimation" style="margin-top: 40px;">
    
 
     <div id="qrcode" align="center" style="margin-top: 120px; animation: fadeUp linear; animation-timeline: view(); animation-range: entry 0% cover 40%;"> <p style="font-size: 32px;"> ស្កេនដើម្បីទទួលបានកូដ </p></div>
@@ -360,62 +523,75 @@
    <br><br><br><br><br>
    <hr>
    <div class="footer">
-    <div class="footertext">
-        <p style="font-size: 22px; margin-top: 40px;">
-            <span>🏠︎ : #32k street, house no. 32, Khan Toul Kok, Phnom Penh</span>
-            <span style="margin-left: -167px; letter-spacing: 1.25px; font-weight: bold;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-                </svg> <span> Student's name:  </span> Sarin Phyphanoch
-            </span>
-            <span>ⓕ : noch12345</span>
-        </p>
-        <p style="font-size: 22px;">
-            <span>🕿 : 012 345 678</span>
-            <span style="margin-left: 30px; letter-spacing: 1.25px; font-weight: bold;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4"/>
-                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-                </svg> <span>Teacher's name:  </span> Ry Visan
-            </span>
-            <span> 𝐗 : noch12345</span>
-        </p>
-        <p style="font-size: 22px;">
-            <span>◛ : noch12345@gmail.com</span>
-                <span style="margin-left: 19px; letter-spacing: 1.25px; font-weight: bold;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 21 19" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="12 2 22 8 12 14 2 8"/>
-                    <path d="M6 11v5c0 2 2.5 4 6 4s6-2 6-4v-5"/>
-                    </svg> <span>Group:  </span> SX7
-                </span>
-            <span style="display:flex; align-items:center; gap:6px; ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                <circle cx="12" cy="12" r="5"/>
-                <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-                </svg>: noch12345
-            </span>
-        </p>
-        <p style="font-size: 22px;">
-            <span>◛ : nochrestaurant@gmail.com</span>
-                <span style="margin-left: 76px; letter-spacing: 1.25px; font-weight: bold;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="8" y1="13" x2="16" y2="13"/>
-                    <line x1="8" y1="17" x2="16" y2="17"/>
-                    <line x1="8" y1="9" x2="10" y2="9"/>
-                    </svg> <span>Project:   </span> Midterm Project
-                </span>
-                <span style="display:flex; align-items:center; gap:6px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
-                        <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+        <div class="alltext">
+            <div class="footertop">
+                <span class="footertopinfo"> NOCH'S RESTAURANT</span>
+                <div class="footertopinfo1">
+                    <span>  MIDTERM PROJECT . SX7</span>
+                </div>
+                
+            </div>
+            <hr color="white" style="z-index: 1; position: relative;">
+            <div class="footertext">
+                <div class="sectioncolumn">
+                    <div class="part1" style="margin-top: .80px;">
+                        <span class="graytext"> 🏠︎ Address </span> 
+                        <div class="whitetext"> #32k street, house no. 32, </div>
+                        <div class="whitetext">Khan Toul Kok, Phnom Penh </div>
+                    </div>
+                    <div class="part2">
+                        <span class="graytext"> ◛ Email</span> 
+                        <div class="whitetext"> noch12345@gmail.com </div>
+                        <div class="whitetext"> nochrestaurant@gmail.com </div>
+                    </div>
+               </div>
+
+                <div class="sectioncolumn">
+                    <div class="part1">
+                        <span class="graytext">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                            </svg>  Student's name </span>
+                            <div class="whitetext" style="margin-left: 3px;"> Sarin Phyphanoch </div>
+                   </div>
+                    <div class="part2">
+                        <span class="graytext">
+                            <br><br>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                           <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                            </svg>  Teacher's name </span>
+                            <div class="whitetext" style="margin-left: 40px;"> Ry Visan </div>
+                    </div>    
+                </div>
+
+                <div class="sectioncolumn">
+                    <div class="part1"> 
+                        <span class="graytext"> Social Media </span>
+                        <div class="whitetext"> ⓕ :  noch12345 </div> 
+                        <div class="whitetext" style="margin-left: 8px;"> 𝐗  : noch12345 </div>
+                        <div  class="whitetext" style="margin-left: -3px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 23 22" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5"/>
+                            <circle cx="12" cy="12" r="5"/>
+                           <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+                           </svg> : noch12345
+                       </div>
+                       <div  class="whitetext">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+                            <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
                             <path d="M 84.494 22.535 c -5.144 0 -9.891 -1.704 -13.702 -4.579 c -4.371 -3.296 -7.512 -8.13 -8.621 -13.702 C 61.895 2.877 61.748 1.456 61.733 0 H 47.038 v 40.154 l -0.018 21.994 c 0 5.88 -3.829 10.866 -9.137 12.619 c -1.54 0.509 -3.204 0.75 -4.937 0.655 c -2.211 -0.121 -4.283 -0.789 -6.084 -1.866 c -3.833 -2.292 -6.431 -6.451 -6.502 -11.208 c -0.111 -7.435 5.9 -13.496 13.329 -13.496 c 1.467 0 2.875 0.239 4.194 0.674 V 38.552 v -3.945 c -1.391 -0.206 -2.806 -0.313 -4.238 -0.313 c -8.132 0 -15.737 3.38 -21.174 9.47 c -4.109 4.602 -6.574 10.473 -6.954 16.63 c -0.498 8.088 2.461 15.776 8.201 21.449 c 0.843 0.833 1.729 1.606 2.655 2.319 C 21.294 87.947 27.31 90 33.646 90 c 1.431 0 2.847 -0.106 4.238 -0.312 c 5.919 -0.877 11.38 -3.586 15.69 -7.847 c 5.296 -5.234 8.222 -12.183 8.253 -19.579 l -0.076 -32.844 c 2.526 1.949 5.289 3.562 8.253 4.813 c 4.611 1.945 9.5 2.931 14.531 2.93 V 26.491 v -3.959 C 84.539 22.535 84.497 22.535 84.494 22.535 z" fill="white"/>
-                        </g>
-                    </svg> : noch12345
-                </span>
-            </p>
+                            </g>
+                            </svg> : noch12345
+                        </div>
+                    </div>
+                    <div class="part2">
+                        <span class="graytext"> 🕿 Telephone </span>
+                        <div class="whitetext"> 012 345 678 </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
